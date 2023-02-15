@@ -68,7 +68,7 @@ if (true) {
    console.log(instructor);                                 //loguea the flash
    console.log(pm);                                         //loguea reverse flash
 }
-console.log(instructor);                                    //loguea tony
+console.log(instructor);                                    //loguea tony------- logue the flash pq if no es una funcion entonces no genera otro contexto
 console.log(pm);                                            //loguea franco
 ```
 
@@ -80,17 +80,17 @@ console.log(pm);                                            //loguea franco
 6 / "3"  //2
 "2" * "3"  //6
 4 + 5 + "px"  //'9px'
-"$" + 4 + 5 //$9
+"$" + 4 + 5 //$45
 "4" - 2 //2
-"4px" - 2  //'4px2'
+"4px" - 2  //'Nan'
 7 / 0   //infinity
-{}[0]  
+{}[0]  // undefined, es la propiedad cero edun objeto vacio
 parseInt("09") //9
 5 && 2  //2
 2 && 5  //5
-5 || 0  //0
-0 || 5 //0
-[3]+[3]-[10] //23 lo q hace es sumar los 3 como string y ahi transformarle a numero y restar diez por eso queda 33
+5 || 0  //5
+0 || 5 //5
+[3]+[3]-[10] //23 lo q hace es concatenar los 3 y restar 10 pq si ahre
 3>2>1  //false
 [] == ![]     //true no entiendo pq 
 ```
@@ -105,7 +105,6 @@ parseInt("09") //9
 function test() {                
    console.log(a);                                             //loguea undefined
    console.log(foo());                                         //loguea 2
-
    var a = 1;              crea la variable a
    function foo() {        declara la variable completa
       return 2;
@@ -128,7 +127,8 @@ function getFood(food) {            declara la funcion completa            //no 
    return snack;
 }
 
-getFood(false);
+getFood(false);                                    //me retorna undefined porque creo la variabledentro de la funcion pero con undefined, como no se cumple el if  no se le da el valor
+                                                   // de friskies entonces me tira undefined
 ```
 
 ### This
@@ -151,7 +151,8 @@ console.log(obj.prop.getFullname()); // aurelio de la rosa
 
 var test = obj.prop.getFullname;
 
-console.log(test()); //juan perez
+console.log(test()); //juan perez    //eto es lo q no entendi debe dar juan perez, pero en vs code por el quokka me da undefined pq le cuesta xd
+
 ```
 
 ### Event loop
